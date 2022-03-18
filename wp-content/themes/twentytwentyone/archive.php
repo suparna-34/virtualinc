@@ -24,33 +24,42 @@ $description = get_the_archive_description();
 		<?php endif; ?>
 	</header><!-- .page-header -->
 
-	
-
-<script type="text/javascript">
-	;(function search () {
-		;[...document.querySelectorAll('.searchable')].forEach(makeSearchable)
+	<div class="searchable">
 		
-		function makeSearchable ($searchable) {
-			const $searchableItems = [...$searchable.querySelectorAll('.searchable-item')]
-			const $search = $searchable.querySelector('input')
-			$search.addEventListener('keyup', (e) => {
-				$searchableItems.forEach(function ($el) {
-					const text = $el.getAttribute('data-search') || $el.innerText
-					const show = new RegExp(e.target.value, 'i').test(text)
-					$el.style.display = show ? '' : 'none'
-				})
-			})
-		}
-	})()
-</script>
+
+		<input class="search-inpt" type="text" autofocus placeholder="Search posts"/>
+
+		
 
 
-	<?php while ( have_posts() ) : ?>
-		<?php the_post(); ?>
-		<?php get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); ?>
-	<?php endwhile; ?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
+			<?php get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); ?>
+		<?php endwhile; ?>
 
-	<?php twenty_twenty_one_the_posts_navigation(); ?>
+		<?php twenty_twenty_one_the_posts_navigation(); ?>
+
+
+		<script type="text/javascript">
+			;(function search () {
+				;[...document.querySelectorAll('.searchable')].forEach(makeSearchable)
+				
+				function makeSearchable ($searchable) {
+					const $searchableItems = [...$searchable.querySelectorAll('.post')]
+					const $search = $searchable.querySelector('input')
+					$search.addEventListener('keyup', (e) => {
+						$searchableItems.forEach(function ($el) {
+							const text = $el.getAttribute('data-search') || $el.innerText
+							const show = new RegExp(e.target.value, 'i').test(text)
+							$el.style.display = show ? '' : 'none'
+						})
+					})
+				}
+			})()
+		</script>
+	
+	</div>
+
 
 <?php else : ?>
 	<?php get_template_part( 'template-parts/content/content-none' ); ?>

@@ -5,20 +5,54 @@
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-article{
-	float: left;
-	width: 25%;
-	padding: 10px;
-	.box;
-
+body.home{
 	.post-thumbnail{
-		height: 250px;
-		img{
-			height: 250px !important;
+		width: 700px !important;
+	}
+}
+
+body.archive{
+
+	.site-header{
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	.alignwide{
+		padding-bottom: 0 !important;
+		margin-bottom: 0 !important;
+		.page-title{
+			font-size: 3em;
 		}
 	}
 
-	.entry-content{
-		display: none;
+	.searchable{
+
+		.search-inpt{
+			margin-left: 55%;
+			width: 40%;
+			display: block;
+			padding: 5px;
+		}
+		article{
+			float: left;
+			width: 25%;
+			padding: 20px;
+			margin-top: 0px !important;
+			.box;
+
+			.post-thumbnail{
+				height: 250px;
+				img{
+					height: 250px !important;
+				}
+			}
+
+			.entry-content{
+				display: none;
+			}
+		}
 	}
+		
 }
+
