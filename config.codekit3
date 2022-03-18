@@ -30,11 +30,11 @@
 		"oAP": "\/index.php",
 		"oF": 0
 		},
-	"\/virtualinc.sql": {
+	"\/readme.txt": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "\/virtualinc.sql",
+		"oAP": "\/readme.txt",
 		"oF": 0
 		},
 	"\/wp-activate.php": {
